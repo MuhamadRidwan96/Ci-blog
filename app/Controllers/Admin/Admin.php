@@ -5,6 +5,7 @@ use App\Controllers\BaseController;
 class Admin extends BaseController{
 
     public function login(){
-        echo "hi";
+        $data = [];
+       echo view('admin/v_login',$data);
     }
 }
