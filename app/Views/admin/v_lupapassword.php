@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login</title>
+        <title>Password Reset</title>
         <link href="<?php echo base_url('admin')?>/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -18,8 +18,9 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Password Recovery</h3></div>
                                     <div class="card-body">
+                                        <div class="small mb-3 text-muted">Enter your email address and we will send you a link to reset your password.</div>
                                         <?php
                                         $session = \Config\Services::session();
                                         if($session->getFlashdata('warning')){
@@ -47,31 +48,22 @@
                                             }
 
                                         ?>
-                                        <form method="POST" action="">
+                                        <form>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputUsername" type="text" placeholder="username" name="username" 
-                                                value="<?php if($session->getFlashdata('username')) echo $session->getFlashdata('username')?>"/>
-                                                <label for="inputUsername">Username</label>
+                                                <input class="form-control" id="inputEmail" type="email" name="username" value="<?php if($session->getFlashdata('username')) echo $session->getFlashdata('username')?> " placeholder="name@example.com" />
+                                                <label for="inputEmail">Email address / Username</label>
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password"/>
-                                                <label for="inputPassword">Password</label>
-                                            </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" 
-                                                name="remember_me" type="checkbox" value="1" />
-                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                            </div>
+
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="<?php echo site_url("admin/lupapass") ?>">Forgot Password?</a>
-                                                <input type="submit" class="btn btn-primary" name="submit" value="LOGIN"/>
+                                                <a class="small" href="<?php echo site_url('admin/loign')?>">Return to login</a>
+    
+                                                <input type="submit" class="btn btn-primary" name="submit" value="kirim email recovery"/>
                                             </div>
                                         </form>
                                     </div>
-                                    <!-- <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a>
-                                        </div>
-                                    </div> -->
+                                    <div class="card-footer text-center py-3">
+                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -82,12 +74,12 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Rdn 2022</div>
-                            <div>
-                                <!-- <a href="#">Privacy Policy</a>
+                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <!-- <div>
+                                <a href="#">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a> -->
-                            </div>
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div> -->
                         </div>
                     </div>
                 </footer>

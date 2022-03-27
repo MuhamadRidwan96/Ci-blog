@@ -33,6 +33,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+//meringkas url
+$routes->group('admin', function($routes){
+
+    $routes->add('login', 'Admin/Admin::login');
+    $routes->add('success', 'Admin/Admin::success');
+    $routes->add('logout', 'Admin/Admin::logout');
+    $routes->add('lupapassword', 'Admin/Admin::lupapassword');
+
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

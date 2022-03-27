@@ -7,14 +7,14 @@ class ModelAdmin extends Model{
     protected $table = "admin";
     protected $primarykey ="email";
     protected $allowedField = [
-        'usename','password','nama_lengkap','email','token','last_login'
+        'username','password','nama_lengkap','email','token','last_login'
     ];
 
-    public function getData($param){
+    public function getData($parameter){
 
-        $builder = $this->table('admin')->first();
-        $builder->where('username',$param);
-        $builder->orwhere('email',$param);
+        $builder = $this->table($this->table);
+        $builder->where('username',$parameter);
+        $builder->orwhere('email',$parameter);
         $query = $builder->get();
         return $query->getRowArray();
 
